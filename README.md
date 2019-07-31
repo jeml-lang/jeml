@@ -166,7 +166,8 @@ Booleans are always lowercase, as it should be!
 ```
 
 **Strings**  
-There are two types of strings in JEML:
+
+There are two types of strings in JEML:  
   - Inline
   - Multi-line
 
@@ -194,6 +195,7 @@ work without having to fight against anyone/anything.
 
 
 **Integers**  
+
 Integers more-than zero are positive, integers less-than zero are negative
 and should be prefixed by a minus '-' character.
 
