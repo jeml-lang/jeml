@@ -108,8 +108,8 @@ strings {
   inline      "Hello, this is a string"
   escaped     "\tThis string contains \"cool\" escaped characters\n"
   multi-line  """
-    Wow, what a string!
-    It's on a bunch of different lines! Truley astonishing.
+    Wow, a string on multiple lines!
+    Truely astonishing. Welcome to the future.
   """
 }
 

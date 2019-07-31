@@ -13,7 +13,7 @@ To accomplish this, JEML does away with things like `=`, `:`, and other symbols 
 
 ## Example
 
-This example can also be seen [here](test/test.jeml). 
+This example can also be seen [here](tests/test.jeml). 
 
 ```jeml
   # This is a JEML file! 
@@ -132,9 +132,10 @@ In JSON:
 
 
 ### Lists
-In JEML, lists are similar to maps. However, list values don't have keys,
-just values. Lists are also heterogeneous, meaning their values can be of any type (besides maps). Lists, however, are not standalone like maps. They must be
-assigned to a key and belong in another structure, like a map. 
+In JEML, lists are similar to maps. However, lists don't use keys,
+just values. Lists are also heterogeneous, meaning their values can be of any type (besides map).
+Lists, however, are not standalone like maps. They must be assigned to a key or
+belong to a structure, like a map or another list. 
 
 ```jeml
   map {
@@ -166,7 +167,8 @@ Booleans are always lowercase, as it should be!
 ```
 
 **Strings**  
-There are two types of strings in JEML:
+
+There are two types of strings in JEML:  
   - Inline
   - Multi-line
 
@@ -194,6 +196,7 @@ work without having to fight against anyone/anything.
 
 
 **Integers**  
+
 Integers more-than zero are positive, integers less-than zero are negative
 and should be prefixed by a minus '-' character.
 
@@ -210,7 +213,7 @@ For large numbers, an underscore ('_') character can be used in place of a comma
   large_integers {
     pretty_big 1_000
     even_bigger 1_000_000
-    super_large 999_999_999 # probably shouldn't be used
+    super_large 999_999_999
   }
 ```  
 
@@ -234,14 +237,15 @@ by a fractional part (decimal) and/or an exponent part.
 
 ## Implementations
 
-It's pretty empty here right now, but if you have an implementation, submit a pull request
-adding it to this section. Please say which version of the specification your implementation supports.
+It's pretty empty here right now, but if you have an implementation, submit a pull request,
+adding it to this section. Please specify which version of the specification your implementation supports.
 
 
 ## Contributing
 
-Did you find something wrong with spec? Do you have an idea about how to improve JEML? Just want to say hi?
-Submit an issue or pull request with your improvements or suggestions! 
+Did you find something wrong with spec? Do you have an idea about how to improve JEML? Just want to say hi?  
+
+Submit an issue or a pull request with your improvements or suggestions! 
 
 ## Inspirations
 - [TOML (Tom's Obvious, Minimal Language)](https://github.com/toml-lang/toml/) (obviously)
