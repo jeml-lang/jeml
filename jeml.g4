@@ -19,42 +19,41 @@ grammar jeml ;
 */
 
 document
-  : map+
+  : j_map+
   ;
 
-map
-  : key '{' ( map_value ) '}'
-  | key '{' '}'
+j_map
+  : j_key '{' ( j_map_body ) '}'
+  | j_key '{' '}'
   ;
 
-map_value
-  : ( pair | map ) ( pair | map )*
+j_map_body
+  : ( j_pair | j_map ) ( j_pair | j_map )*
   ;
 
-pair
-  : key value
+j_pair
+  : j_key j_value
   ;
 
-key
+j_key
   : KEY
   ;
 
-value
-  : bool
-  | list
-  | string
-  | number
+j_value
+  : j_bool
+  | j_list
+  | j_string
+  | j_number
   ;
 
-list
-  : '[' value ( value )* ']'
+j_list
+  : '[' j_value ( j_value )* ']'
   | '[' ']'
   ;
 
-string : STRING ;
-bool : BOOLEAN ;
-number : NUMBER ;
-
+j_string : STRING ;
+j_bool : BOOLEAN ;
+j_number : NUMBER ;
 
 /*
  * Lexer Rules
