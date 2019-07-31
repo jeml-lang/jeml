@@ -2,7 +2,7 @@
 
 Just Enough Markup Language
 
-Latest Version: [v1.0.0](/)
+Latest Version: [v1.0.0](https://github.com/jeml-lang/jeml/tree/v1.0.0)
 
 *Notice: JEML and its specification are subject to change. Because of this, any feedback is welcome :)*
 
@@ -155,7 +155,7 @@ Lists can also be nested like maps using the same syntax.
 
 ### Types
 
-**Booleans**  
+**Booleans**   
 Booleans are always lowercase, as it should be!
 
 ```jeml
@@ -193,7 +193,7 @@ work without having to fight against anyone/anything.
 ```
 
 
-**Integers**
+**Integers**  
 Integers more-than zero are positive, integers less-than zero are negative
 and should be prefixed by a minus '-' character.
 
@@ -214,7 +214,7 @@ For large numbers, an underscore ('_') character can be used in place of a comma
   }
 ```  
 
-**Floating-point numbers***  
+**Floating-point numbers**  
 
 Floats are built similarly to integers. However, they may also be suffixed
 by a fractional part (decimal) and/or an exponent part.
