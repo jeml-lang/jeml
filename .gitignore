@@ -1,3 +1,5 @@
+build/
+
 # ANTLR4 build files
 *.class
 *.interp
