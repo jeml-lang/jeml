@@ -51,7 +51,7 @@ Thus allowing you to keep the hierarchical structure you're used to, minus the c
 
 
 ## Specification
-- JEML is case insensitive. Meaning `foo`, `Foo`, and `fOo` are the same thing.
+- Keys are **case insensitive**. Meaning `foo`, `Foo`, and `fOo` are the same thing. Values, like `true` and `false`, are **case sensitive**.  
 - Valid whitespace characters are `U+0009` (tab) and `U+0020` (space).
 
 ### Comments
