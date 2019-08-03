@@ -1,4 +1,3 @@
-
 # Examples for JEML v1.0.0
 
 # ---------------------------------------------------------------------------
@@ -157,5 +156,15 @@ floats {
     bar 455E-3
     fiz 3.14e-33
   }
+}
+
+# Binary, Octal, and Hexidecimal
+# ------------------------------
+# JEML also supports Binary, Octal, and Hexidecimal numbers.
+
+complex {
+  binary 0b1000101
+  octal 0o105
+  hexidecimal 0x4f
 }
 

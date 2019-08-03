@@ -51,9 +51,18 @@ j_list
   | '[' ']'
   ;
 
-j_string : STRING ;
-j_bool : BOOLEAN ;
-j_number : NUMBER ;
+j_string  : STRING | MULTILINE_STRING ;
+j_bool    : BOOLEAN ;
+j_number  : ( j_octal | j_binary | j_hex | j_decimal | j_integer );
+
+// Numerical types
+j_octal   : OCTAL_NUMBER ;
+j_binary  : BINARY_NUMBER ;
+j_hex     : HEXIDECIMAL_NUMBER ;
+j_decimal : DECIMAL ;
+j_integer : INTEGER ;
+j_complex : j_binary | j_octal | j_hex ;
+
 
 /*
  * Lexer Rules
@@ -67,33 +76,16 @@ BOOLEAN
 
 STRING
   : '"' ( ESCAPE_SEQUENCE | SAFE_CODEPOINT )* '"'
-  | MULTILINE_STRING
   ;
 
-NUMBER
+INTEGER
+  : '-'? DIGIT_09 ( DIGIT_09+ )?
+  ;
+
+DECIMAL
   : '-'? DIGIT_09 ( '.' DIGIT_09+ )? EXPONENT?
   | DIGIT_09 ( '_' DIGIT_09 )*
   | '.' DIGIT_09 ( '_' DIGIT_09 )*
-  | SPECIAL_NUMBER
-  ;
-
-SPECIAL_NUMBER
-  : HEXIDECIMAL_NUMBER
-  | BINARY_NUMBER
-  | OCTAL_NUMBER
-  ;
-
-KEY
-  : ( ALPHA | DIGIT_09 | '-' | '_' | '?' )+
-  ;
-
-MULTILINE_STRING
-  /* : '"""' ( SAFE_CODEPOINT | ESCAPE_SEQUENCE | ~["\\] | . )*? '"""' */
-  : '"""' ( . )*? '"""'
-  ;
-
-EXPONENT
-  : [Ee] [+\-]? DIGIT_09
   ;
 
 HEXIDECIMAL_NUMBER
@@ -108,12 +100,23 @@ OCTAL_NUMBER
   : '0o' DIGIT_07 ( DIGIT_07 | '_' DIGIT_07 )*
   ;
 
+KEY
+  : ( ALPHA | DIGIT_09 | '-' | '_' | '?' | '!' )+
+  ;
+
+MULTILINE_STRING
+  : '"""' ( . )*? '"""'
+  ;
+
+EXPONENT
+  : [Ee] [+\-]? DIGIT_09
+  ;
+
 fragment ESCAPE_SEQUENCE : '\\' ( ["\\/bfnrt] ) ;
 fragment SAFE_CODEPOINT  : ~["\\\u0000-\u001F] ;
 
 fragment ALPHA           : [A-Za-z] ;
 fragment DIGIT_09        : [0-9]+ ;
-fragment DIGIT_19        : [1-9]+ ;
 fragment DIGIT_07        : [0-7]+ ;
 fragment DIGIT_01        : [0-1]+ ;
 fragment HEXIDECIMAL     : [A-Fa-f] | DIGIT_09 ;
