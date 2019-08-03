@@ -4,8 +4,9 @@
  * this specification, please submit a pull request to:
  * https://github.com/jeml-lang/jeml
  *
- * JEML (Just Enough Markup Language) v1.0.0 Specification
- * Initial Publishing Date: Tuesday Jul 31, 2019
+ * JEML (Judah's Easy Minimal Language) v1.1.0 Specification
+ * Initial Publishing Date: Saturday Aug 03, 2019
+ * Latest Revision Date: Saturday Aug 03, 2019
  *
  * To learn more about the syntax of this specification,
  * visit: https://www.antlr.org/
@@ -41,6 +42,7 @@ j_key
 
 j_value
   : j_bool
+  | '{' ( j_map_body ) '}' // Anonymous maps in list structures
   | j_list
   | j_string
   | j_number

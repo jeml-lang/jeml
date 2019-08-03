@@ -1,14 +1,14 @@
 # JEML
 
-Just Enough Markup Language
+Judah's Easy Minimal Language
 
-Latest Version: [v1.0.0](https://github.com/jeml-lang/jeml/tree/v1.0.0)
+Latest Version: [v1.1.0](https://github.com/jeml-lang/jeml/tree/v1.1.0)
 
 *Notice: JEML and its specification are subject to change. Because of this, any feedback is welcome :)*
 
 ## Reasoning
 
-JEML's main goal is to be an efficient, human-readable markup language with easily parsable syntax.
+JEML's main goal is to be an efficient, human-readable configuration language with easily parsable syntax.
 To accomplish this, JEML does away with things like `=`, `:`, and other symbols that can lead to clutter.
 
 ## Example
@@ -51,7 +51,7 @@ Thus allowing you to keep the hierarchical structure you're used to, minus the c
 
 
 ## Specification
-- Keys are **case insensitive**. Meaning `foo`, `Foo`, and `fOo` are the same thing. Values, like `true` and `false`, are **case sensitive**.  
+- Keys are **case sensitive**. Meaning `foo`, `Foo`, and `fOO` are all separate things.
 - Valid whitespace characters are `U+0009` (tab) and `U+0020` (space).
 
 ### Comments
@@ -133,13 +133,13 @@ In JSON:
 
 ### Lists
 In JEML, lists are similar to maps. However, lists don't use keys,
-just values. Lists are also heterogeneous, meaning their values can be of any type (besides map).
+just values. Lists are also heterogeneous, meaning their values can be of any type.
 Lists, however, are not standalone like maps. They must be assigned to a key or
 belong to a structure, like a map or another list. 
 
 ```jeml
   map {
-    list [1 2 3 "apple" "banana" "cherry"]
+    list [1 2 3 "apple" "banana" "cherry" {foo 1}]
   }
 ```
 
@@ -235,6 +235,20 @@ by a fractional part (decimal) and/or an exponent part.
   }
 ```
 
+
+**Complex numbers**  
+
+JEML supports Hexidecimal, Binary, and Octal numbers by default using the `0x`, `0b`, and `0o` prefixes respectively.  
+
+```jeml
+  complex {
+    binary 0b01001
+    hexidecimal 0x4f
+    octal 0o245
+  }
+```
+
+
 ## Implementations  
 
 If you have an implementation, submit a pull request, adding it to this section!   
@@ -250,3 +264,4 @@ Submit an issue or a pull request with your improvements or suggestions!
 
 ## Inspirations
 - [TOML (Tom's Obvious, Minimal Language)](https://github.com/toml-lang/toml/) (obviously)
+

@@ -1,4 +1,4 @@
-# Examples for JEML v1.0.0
+# Examples for JEML v1.1.0
 
 # ---------------------------------------------------------------------------
 # Comments
@@ -71,7 +71,7 @@ parent {
 # They must be assigned to a key and belong in another structure, like a map.
 
 map {
-  list [1 2 3 "apple" "banana" "cherry"]
+  list [1 2 3 "apple" "banana" "cherry" {foo 1} {bar 2}]
 }
 
 # Once again, whitespace is used. However, this time it's used to separate
