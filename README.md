@@ -2,9 +2,7 @@
 
 Just Enough Markup Language
 
-Latest Version: [v1.0.0](https://github.com/jeml-lang/jeml/tree/v1.0.0)
-
-*Notice: JEML and its specification are subject to change. Because of this, any feedback is welcome :)*
+**DISCLAIMER**: JEML is currently being redesigned. Because of this, the respository has been archived.
 
 ## Reasoning
 
